@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="links">
+        <a href="aula01.html">Aula 01</a> |;
+        <a href="aula02.html">Aula 02</a> |;
+        <a href="aula03.html">Aula 03</a> |;
+    </div>
+
+    <p>Aula de Lógica Java Script - FUNÇÕES E PARAMETROS</p>
+
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <script>
+        var nome, estoque, pacote, inicio, passeios, mensagem;
+        nome="Erik Proença";
+        estoque=150;
+        pacote="35";
+        inicio=false;
+        passeios=new Array("Curitiba", "Rio de Janeiro");
+
+
+        console.log(nome);
+        console.log(typeof(nome));
+        console.log(estoque);
+        console.log(typeof(estoque));
+        console.log(estoque+parseInt("20"));
+        console.log(estoque+parseInt(pacote));
+        console.log(parseInt(100+2.5));
+        console.log("A variável início é do tipo: " + typeof(inicio))
+        console.log(typeof(passeios));
+        console.log(passeios[1]);
+        console.log(mensagem);
+        mensagem = "Ano passado eu fui para " + passeios[0] + " nas minhas férias!";
+        console.log(mensagem);
+
+        let box1=document.querySelector("#box1");
+        let salario=10000;
+        let aumento=1.1;
+        console.log(box1);
+        let funcionario="Carlos";
+        console.log(funcionario);
+        let novoSalario = salario*aumento;
+        box1.innerHTML="<p>" + funcionario + " receberá um salário de R$" + novoSalario + ",00 mensal</p>";
+        box1.innerHTML+="<p>" + funcionario + "seu salario era de R$" + salario + ",00 mensais";
+        //////////
+
+        //condicionais (tomadas de decisão)
+
+        let nivel;
+        let box2=document.querySelector("#box2");
+        nivel = 4;//1 = administrador, 2 = editor, 3 = usuário
+        if(nivel == 1){
+            alert("Administrador");
+        } else if(nivel == 2) {
+            alert("Editor");
+        } else if (nivel == 3) {
+            alert("Usuário");
+        } else {
+            box2.innerHTML="Você precisa se cadastrar no sistema";
+        }
+
+        nivel >=4 ? alert("sem cadastro") : alert("Bem vindo");
+
+        //switch case
+        switch(nivel) {
+            case 1: box2.innerHTML="<p>Olá administrador</p>";
+            break;
+            case 2: box2.innerHTML="<p>Olá Editor</p>";
+            break;
+            case 3: box2.innerHTML="<p>Olá Usuário</p>";
+            break;
+            default: 
+            box2.className="bemVindo";
+            box2.innerHTML="<p>Não deixe de se cadastrar</p>";
+            break;
+        }
+    </script>
+</body>
+</html>

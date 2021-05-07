@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="links">
+        <a href="aula01.html">Aula 01</a> |;
+        <a href="aula02.html">Aula 02</a> |;
+        <a href="aula03.html">Aula 03</a> |;
+    </div>
+
+    <p>Aula de Lógica Java Script</p>
+
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3">
+        <ul>
+        </ul>
+    </div>
+    <div id="box4"></div>
+    
+    <button id="buttonConfirme">Confirmar</button>
+    <script>
+        let estoque, vendas, novoEstoque;
+        estoque=200;
+        novoEstoque=250;
+        function soma() {
+            novoEstoque+=100;
+        }
+        console.log(novoEstoque);
+        soma();
+        console.log(novoEstoque);
+
+        ///////////////////////////
+
+        function comissao() {
+            var taxa=1.2;
+            return taxa;
+        }
+        console.log(comissao());
+
+        //////////////////////////
+
+        function divisao(a,b) {
+            return a/b;
+        }
+
+        console.log(divisao(17,9));
+        let box1=document.querySelector("#box1");
+        box1.innerHTML=divisao(29,9);
+
+        ////////////////////////
+        // controle do evento click
+
+        let numeros=[100,58,32,19,38,64,12,43,79];
+        
+
+        let buttonConfirme=document.querySelector("#buttonConfirme");
+
+        buttonConfirme.onclick=function() {
+            sorteiaNumeros();
+            sorteiaPessoa();
+            sorteiaPasseio();
+        }
+
+        function sorteiaNumeros() {
+            sorteio=parseInt(Math.random()*6)
+            box1.innerHTML=numeros[sorteio]
+        }
+
+        
+        function sorteiaPessoa() {
+            sorteio=parseInt(Math.random()*5);
+            box2.innerHTML=funcionarios[sorteio];
+        }
+
+        function sorteiaPasseio() {
+            sorteio=parseInt(Math.random()*passeios.length);
+            box3.innerHTML=passeios[sorteio];
+        }
+        
+        ////////////////
+        let funcionarios, sorteio, box2;
+        
+        funcionarios=["Ernesto", "Valdir", "Renata", "Juan", "Thiel"];
+        box2=document.querySelector("#box2");
+        
+        sorteiaPessoa();
+
+        console.log(parseInt(Math.random()*10));
+
+        ///////////////////
+        //while///////////
+
+        let n=-1
+        console.log(funcionarios.length)
+        while(n<funcionarios.length-1) {
+            n++;
+            console.log(funcionarios[n]);
+            box2.innerHTML+="<p>" + funcionarios[n] + "</p>"
+        }
+
+        //////////////////
+
+        let passeios=[
+            ["França", "Arco do Triunfo"],
+                ["Canadá", "Castelo de gelo"],
+                    ["Estados Unidos", "Grand Canyon"],
+                        ["Portugal", "Lisboa"],
+                            ["Espanha", "Tourada"],
+                                ["Alemanhã", "Catedral de Colônia"]
+        ];
+
+        let lista=document.querySelector("#box3 ul");
+        let mensagem="";
+        for (var i=0; i<passeios.length; i++) {
+            console.log(passeios[i][1])
+            mensagem+="<li>"+ passeios[i][0] + " tem " + passeios[i][1] + "</li>";
+            lista.innerHTML=mensagem;
+        }
+
+        let verificacao="";
+        let box4=document.querySelector("#box4");
+        
+        for (var i=0; i<numeros.length; i++) {
+            if((numeros[i] % 2) == 0) {
+                verificacao+="<p>" + numeros[i] + " é um número par" + "</p>";
+                console.log(box4);
+                box4.innerHTML=verificacao;
+            } else {
+                verificacao+="<p>" + numeros[i] + " é um número ímpar" + "</p>";
+                console.log(verificacao);
+                box4.innerHTML=verificacao;
+            }
+            
+        }
+
+    </script>
+</body>
+</html>

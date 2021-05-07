@@ -1,0 +1,43 @@
+/* aula01 */
+
+.links {
+    margin: center;
+    text-align: center;
+}
+
+#box1, #box4 {
+    width: 18.75rem;
+    border: 1px solid black;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.25rem;
+    border-radius: 5px;
+}
+
+#box2 {
+    width: 18.75rem;
+    border: 1px solid green;
+    padding: 1rem;
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 1.25rem;
+    border-radius: 5px;
+}
+
+#box3 {
+    width: 18.75rem;
+    border: 0.25rem solid pink;
+    padding: 1rem;
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 1.25rem;
+    border-radius: 5px;
+}
+
+.alerta {
+    color: red;
+}
+
+.sucesso {
+    color: green;
+}
